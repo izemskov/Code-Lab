@@ -1,4 +1,4 @@
-package ru.develgame.jsf.helloworld;
+package ru.develgame.codelab.javaee.bf;
 
 import jakarta.faces.event.ActionEvent;
 import jakarta.faces.view.ViewScoped;

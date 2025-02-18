@@ -10,6 +10,8 @@ A personal laboratory for learning and experimenting with Java development. This
 
 **JavaEE/PFHelloWorld** - Hello world for PrimeFaces
 
+**JavaEE/BFPoll** - Bootsfaces poll
+
 **Spring/SpringRPC/ProtectedBySpringSecurity** - This project describes the ability to protect remote procedure call access by Spring Security.
 
 **Spring/SpringData/nested-transactions** - This project contains a possible solution to the nested transaction problem in Spring.
