@@ -20,6 +20,7 @@
 
     <modules>
         <module>JSFHelloWorld</module>
+        <module>PFHelloWorld</module>
     </modules>
 
     <dependencyManagement>
@@ -41,6 +42,28 @@
                 <version>6.1.0</version>
                 <scope>provided</scope>
             </dependency>
+
+            <!-- Primefaces -->
+            <dependency>
+                <groupId>org.primefaces</groupId>
+                <artifactId>primefaces</artifactId>
+                <version>14.0.11</version>
+                <classifier>jakarta</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.primefaces.themes</groupId>
+                <artifactId>all-themes</artifactId>
+                <version>1.1.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>prime-repo</id>
+            <name>PrimeFaces Maven Repository</name>
+            <url>https://repository.primefaces.org/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 </project>

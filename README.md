@@ -6,6 +6,10 @@ A personal laboratory for learning and experimenting with Java development. This
 
 ### Projects list
 
+**JavaEE/JSFHelloWorld** - Hello world for JSF
+
+**JavaEE/PFHelloWorld** - Hello world for PrimeFaces
+
 **Spring/SpringRPC/ProtectedBySpringSecurity** - This project describes the ability to protect remote procedure call access by Spring Security.
 
 **Spring/SpringData/nested-transactions** - This project contains a possible solution to the nested transaction problem in Spring.

@@ -1,4 +1,4 @@
-package ru.develgame.jsf.helloworld;
+package ru.develgame.codelab.javaee.pf;
 
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
