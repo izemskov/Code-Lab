@@ -4,34 +4,30 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.develgame.jsf</groupId>
-    <artifactId>helloworld</artifactId>
-    <version>1.0</version>
-    <packaging>war</packaging>
+    <parent>
+        <groupId>ru.develgame.code-lab</groupId>
+        <artifactId>javaee</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
-    </properties>
+    <groupId>ru.develgame.code-lab.javaee</groupId>
+    <artifactId>jsf-helloworld</artifactId>
+    <version>1.0.0</version>
+    <packaging>war</packaging>
 
     <dependencies>
         <!--J2EE-->
         <dependency>
             <groupId>jakarta.faces</groupId>
             <artifactId>jakarta.faces-api</artifactId>
-            <version>4.1.2</version>
         </dependency>
         <dependency>
             <groupId>jakarta.enterprise</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
-            <version>4.1.0</version>
         </dependency>
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
-            <version>6.1.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

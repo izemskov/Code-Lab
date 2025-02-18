@@ -1,8 +1,8 @@
-# Self Education Repository
+# Code Lab – Java Projects & Experiments
 
 ### Introduction
 
-Projects for self education
+A personal laboratory for learning and experimenting with Java development. This repository contains projects built with Spring and Java EE, covering various aspects of backend development, web applications, and enterprise solutions. A space for continuous improvement, hands-on coding, and exploring new technologies.
 
 ### Projects list
 
