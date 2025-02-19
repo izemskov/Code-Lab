@@ -1,6 +1,6 @@
-package ru.develgame.javaeeasync;
+package ru.develgame.codelab.javaeeasync;
 
-import ru.develgame.javaeeasync.async.AsyncTask;
+import ru.develgame.codelab.javaeeasync.async.AsyncTask;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.Dependent;

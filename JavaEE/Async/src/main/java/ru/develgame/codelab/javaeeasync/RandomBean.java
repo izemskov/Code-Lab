@@ -1,4 +1,4 @@
-package ru.develgame.javaeeasync;
+package ru.develgame.codelab.javaeeasync;
 
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;

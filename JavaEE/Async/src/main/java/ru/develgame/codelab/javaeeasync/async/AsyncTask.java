@@ -1,4 +1,4 @@
-package ru.develgame.javaeeasync.async;
+package ru.develgame.codelab.javaeeasync.async;
 
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;

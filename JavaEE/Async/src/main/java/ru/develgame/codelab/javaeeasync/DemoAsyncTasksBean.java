@@ -1,8 +1,8 @@
-package ru.develgame.javaeeasync;
+package ru.develgame.codelab.javaeeasync;
 
-import ru.develgame.javaeeasync.async.AsyncTask;
-import ru.develgame.javaeeasync.async.AsyncTaskManager;
-import ru.develgame.javaeeasync.async.AsyncTaskStatus;
+import ru.develgame.codelab.javaeeasync.async.AsyncTask;
+import ru.develgame.codelab.javaeeasync.async.AsyncTaskManager;
+import ru.develgame.codelab.javaeeasync.async.AsyncTaskStatus;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
