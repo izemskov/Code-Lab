@@ -1,12 +1,12 @@
 package ru.develgame.javaeeasync.async;
 
-import javax.annotation.Resource;
-import javax.ejb.*;
-import javax.enterprise.concurrent.ManagedExecutorService;
+import jakarta.annotation.Resource;
+import jakarta.ejb.*;
+import jakarta.enterprise.concurrent.ManagedExecutorService;
 import java.util.*;
 
-import static javax.ejb.LockType.READ;
-import static javax.ejb.LockType.WRITE;
+import static jakarta.ejb.LockType.READ;
+import static jakarta.ejb.LockType.WRITE;
 
 @Singleton
 @ConcurrencyManagement(ConcurrencyManagementType.CONTAINER)

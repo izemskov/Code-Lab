@@ -22,6 +22,7 @@
         <module>JSFHelloWorld</module>
         <module>PFHelloWorld</module>
         <module>BFPoll</module>
+        <module>Async</module>
     </modules>
 
     <dependencyManagement>
@@ -42,6 +43,16 @@
                 <artifactId>jakarta.servlet-api</artifactId>
                 <version>6.1.0</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.ejb</groupId>
+                <artifactId>jakarta.ejb-api</artifactId>
+                <version>4.0.1</version>
+            </dependency>
+            <dependency>
+                <groupId>jakarta.enterprise.concurrent</groupId>
+                <artifactId>jakarta.enterprise.concurrent-api</artifactId>
+                <version>3.1.1</version>
             </dependency>
 
             <!-- Primefaces -->

@@ -4,14 +4,14 @@ import ru.develgame.javaeeasync.async.AsyncTask;
 import ru.develgame.javaeeasync.async.AsyncTaskManager;
 import ru.develgame.javaeeasync.async.AsyncTaskStatus;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.EJB;
-import javax.enterprise.inject.spi.CDI;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
-import javax.servlet.http.HttpServletRequest;
+import jakarta.annotation.PostConstruct;
+import jakarta.ejb.EJB;
+import jakarta.enterprise.inject.spi.CDI;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Named;
+import jakarta.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.util.List;
 
