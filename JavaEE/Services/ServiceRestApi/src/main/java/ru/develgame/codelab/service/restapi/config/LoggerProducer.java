@@ -1,4 +1,4 @@
-package ru.develgame.javaeerestapi.common;
+package ru.develgame.codelab.service.restapi.config;
 
 import jakarta.enterprise.inject.Produces;
 import jakarta.enterprise.inject.spi.InjectionPoint;

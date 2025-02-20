@@ -1,4 +1,4 @@
-package ru.develgame.javaeerestapi;
+package ru.develgame.codelab.service.restapi;
 
 import jakarta.ws.rs.ApplicationPath;
 import jakarta.ws.rs.core.Application;

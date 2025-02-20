@@ -1,10 +1,33 @@
-package ru.develgame.javaeerestapi.dto;
+package ru.develgame.codelab.service.restapi.entity;
 
-public class SC2UnitDto {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "SC2_UNITS")
+public class SC2Unit {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "ID")
     private int id;
+
+    @Column(name = "NAME", nullable = false)
     private String name;
+
+    @Column(name = "ATTACK", nullable = false)
     private Double attack;
+
+    @Column(name = "DEFENCE", nullable = false)
     private Double defense;
+
+    public SC2Unit() {
+    }
+
+    public SC2Unit(int id, String name, Double attack, Double defense) {
+        this.id = id;
+        this.name = name;
+        this.attack = attack;
+        this.defense = defense;
+    }
 
     public int getId() {
         return id;

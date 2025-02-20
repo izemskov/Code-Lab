@@ -1,4 +1,4 @@
-package ru.develgame.javaeerestapi.common;
+package ru.develgame.codelab.service.restapi.config;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;

@@ -1,33 +1,17 @@
-package ru.develgame.javaeerestapi.entity;
+package ru.develgame.codelab.service.restapi.dto;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 
-@Entity
-@Table(name = "SC2_UNITS")
-public class SC2Unit {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "ID")
+public class SC2UnitDto {
     private int id;
 
-    @Column(name = "NAME", nullable = false)
+    @NotNull(message = "Name cannot be null")
+    @NotEmpty(message = "Name cannot be empty")
     private String name;
-
-    @Column(name = "ATTACK", nullable = false)
+    @NotNull(message = "Attack cannot be null")
     private Double attack;
-
-    @Column(name = "DEFENCE", nullable = false)
     private Double defense;
-
-    public SC2Unit() {
-    }
-
-    public SC2Unit(int id, String name, Double attack, Double defense) {
-        this.id = id;
-        this.name = name;
-        this.attack = attack;
-        this.defense = defense;
-    }
 
     public int getId() {
         return id;

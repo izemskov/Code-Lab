@@ -1,8 +1,8 @@
-package ru.develgame.javaeerestapi.mapper;
+package ru.develgame.codelab.service.restapi.mapper;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import ru.develgame.javaeerestapi.dto.SC2UnitDto;
-import ru.develgame.javaeerestapi.entity.SC2Unit;
+import ru.develgame.codelab.service.restapi.dto.SC2UnitDto;
+import ru.develgame.codelab.service.restapi.entity.SC2Unit;
 
 @ApplicationScoped
 public class SC2UnitMapper {
