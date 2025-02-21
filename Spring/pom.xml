@@ -28,6 +28,7 @@
 
     <modules>
         <module>webflux</module>
+        <module>async</module>
     </modules>
 
     <dependencyManagement>

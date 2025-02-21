@@ -18,6 +18,8 @@ A personal laboratory for learning and experimenting with Java development. This
 
 **Spring/Webflux** - Spring reactive
 
+**Spring/Async** - Spring run async jobs via thread pool (+ example of inject prototype bean into singleton)
+
 - [**Spring/Webflux/WebfluxFastService**](Spring/Webflux/WebfluxFastService/README.md) - Spring Boot reactive microservice
 
 ### JavaEE
