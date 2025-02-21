@@ -18,7 +18,8 @@
     </properties>
 
     <modules>
-        <module>java</module>
-        <module>javaee</module>
+        <module>Spring</module>
+        <module>Java</module>
+        <module>JavaEE</module>
     </modules>
 </project>

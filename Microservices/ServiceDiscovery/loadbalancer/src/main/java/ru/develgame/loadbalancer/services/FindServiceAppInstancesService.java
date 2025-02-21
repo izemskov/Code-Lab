@@ -1,16 +1,3 @@
-/*
- *
- * This software is copyright protected (c) 2021 by S-Terra CSP
- *
- * Author:              Ilya Zemskov
- * E-mail:              izemskov@s-terra.com
- *
- * Owner:               Ilya Zemskov
- * E-mail:              izemskov@s-terra.com
- *
- * $Header: $
- *
- */
 package ru.develgame.loadbalancer.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
