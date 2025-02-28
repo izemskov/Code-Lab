@@ -2,10 +2,9 @@ package ru.develgame.spring.async.config;
 
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Component;
+import ru.develgame.spring.async.bean.LongTermTask;
 
 import java.util.UUID;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
 
 @Component
 public class LongTermTaskThreadPoolTaskExecutor extends ThreadPoolTaskExecutor {
@@ -18,21 +17,19 @@ public class LongTermTaskThreadPoolTaskExecutor extends ThreadPoolTaskExecutor {
         this.initialize();
     }
 
-    @Override
-    public <T> Future<T> submit(Callable<T> task) {
-        String uuid = UUID.randomUUID().toString();
-
-        Future<T> future = super.submit(wrapTask(task));
-
-        return future;
+    public LongTermTask executeTask(Runnable task) {
+        LongTermTask longTermTask = new LongTermTask(UUID.randomUUID().toString(), 0);
+        super.execute(wrapTask(task, longTermTask));
+        return longTermTask;
     }
 
-    private <T> Callable<T> wrapTask(Callable<T> task) {
+    private Runnable wrapTask(Runnable task, LongTermTask longTermTask) {
         return () -> {
-
-            T call = task.call();
-
-            return call;
+            try {
+                task.run();
+            } finally {
+                longTermTask.setStatus(1);
+            }
         };
     }
 }
