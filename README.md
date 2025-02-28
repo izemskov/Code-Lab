@@ -34,7 +34,7 @@ A personal laboratory for learning and experimenting with Java development. This
 
 **JavaEE/Services** - JavaEE services interaction
 
-- [**JavaEE/Services/ServiceRestApi**](JavaEE/Services/ServiceRestApi/README.md) - JavaEE Rest-api service
+- [**JavaEE/Services/ServiceRestApi**](JavaEE/Services/ServiceRestApi/README.md) - JavaEE Rest-API service
 
 ### Java
 
