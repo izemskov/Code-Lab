@@ -18,7 +18,9 @@ A personal laboratory for learning and experimenting with Java development. This
 
 **Spring/Webflux** - Spring reactive
 
-**Spring/Async** - Spring run async jobs via thread pool (+ example of inject prototype bean into singleton)
+**Spring/Async/SimpleAsync** - Spring run async jobs via thread pool (+ example of inject prototype bean into singleton)
+
+**Spring/Async/CustomTaskExecutor** - Spring custom thread pool task executor for run additional actions before thread start and while thread work 
 
 - [**Spring/Webflux/WebfluxFastService**](Spring/Webflux/WebfluxFastService/README.md) - Spring Boot reactive microservice
 
