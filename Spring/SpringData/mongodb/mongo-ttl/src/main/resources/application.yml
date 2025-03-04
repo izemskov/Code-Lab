@@ -1,0 +1,4 @@
+mongodb:
+  host: localhost:27017
+  database: testdb
+  extra-args: authSource=admin

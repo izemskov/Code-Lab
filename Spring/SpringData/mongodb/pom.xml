@@ -17,5 +17,6 @@
 
     <modules>
         <module>mongo-upsert</module>
+        <module>mongo-ttl</module>
     </modules>
 </project>

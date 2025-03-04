@@ -16,7 +16,9 @@ A personal laboratory for learning and experimenting with Java development. This
 
 **Spring/SpringData** - Spring database projects
 
-- **Spring/SpringData/mongodb/mongo-upsert** - Check condition before insert document 
+- **Spring/SpringData/mongodb/mongo-upsert** - Check condition before insert document
+- 
+- **Spring/SpringData/mongodb/mongo-ttl** - Mongo TTL index for cleanup old documents
 
 **Spring/Webflux** - Spring reactive
 
