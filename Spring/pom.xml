@@ -29,6 +29,7 @@
     <modules>
         <module>webflux</module>
         <module>async</module>
+        <module>SpringData</module>
     </modules>
 
     <dependencyManagement>

@@ -8,6 +8,20 @@ A personal laboratory for learning and experimenting with Java development. This
 
 ### Spring
 
+**Spring/Async** - Projects with multi threading
+
+- **Spring/Async/SimpleAsync** - Spring run async jobs via thread pool (+ example of inject prototype bean into singleton)
+
+- **Spring/Async/CustomTaskExecutor** - Spring custom thread pool task executor for run additional actions before thread start and while thread work
+
+**Spring/SpringData** - Spring database projects
+
+- **Spring/SpringData/mongodb/mongo-upsert** - Check condition before insert document 
+
+**Spring/Webflux** - Spring reactive
+
+- [**Spring/Webflux/WebfluxFastService**](Spring/Webflux/WebfluxFastService/README.md) - Spring Boot reactive microservice
+
 **Spring/SpringRPC/ProtectedBySpringSecurity** - This project describes the ability to protect remote procedure call access by Spring Security.
 
 **Spring/SpringData/nested-transactions** - This project contains a possible solution to the nested transaction problem in Spring.
@@ -15,14 +29,6 @@ A personal laboratory for learning and experimenting with Java development. This
 **Spring/SpringData/postgres-notifications-listener** - Listen postgres notifications sended by pg_notify()
 
 **Spring/SpringData/bidirectional-relationship** - Bidirectional relationships example
-
-**Spring/Webflux** - Spring reactive
-
-**Spring/Async/SimpleAsync** - Spring run async jobs via thread pool (+ example of inject prototype bean into singleton)
-
-**Spring/Async/CustomTaskExecutor** - Spring custom thread pool task executor for run additional actions before thread start and while thread work 
-
-- [**Spring/Webflux/WebfluxFastService**](Spring/Webflux/WebfluxFastService/README.md) - Spring Boot reactive microservice
 
 ### JavaEE
 
