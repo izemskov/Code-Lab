@@ -11,9 +11,7 @@ import java.text.SimpleDateFormat;
 public class MyListener {
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
 
-    @KafkaListener(topics = "metricsTopic",
-            containerFactory = "kafkaListenerContainerFactory",
-            groupId = "groupId")
+    @KafkaListener(topics = "metricsTopic", containerFactory = "kafkaListenerContainerFactory", groupId = "test-group")
     public void listenGroupId(ConsumerRecord<String, MetricDto> record) {
         System.out.println(record.offset()
                 + " " + dateFormat.format(record.value().currentDate())
