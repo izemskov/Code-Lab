@@ -30,6 +30,7 @@
         <module>webflux</module>
         <module>async</module>
         <module>SpringData</module>
+        <module>SpringKafka</module>
     </modules>
 
     <dependencyManagement>

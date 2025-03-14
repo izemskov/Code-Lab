@@ -10,12 +10,12 @@ import ru.develgame.springkafka.producer.dto.MetricDto;
 import java.lang.management.ManagementFactory;
 import java.util.Date;
 
-import static ru.develgame.springkafka.producer.configuration.KafkaTopicConfig.TOPIC_NAME_METRICS;
-
 @Component
 public class MessageScheduler {
     @Autowired
     private KafkaTemplate<String, MetricDto> kafkaTemplate;
+
+    public static final String TOPIC_NAME_METRICS = "metricsTopic";
 
     @Scheduled(fixedDelay = 1000L)
     public void sendMessage() {
