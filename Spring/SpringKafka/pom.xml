@@ -21,6 +21,7 @@
 
     <modules>
         <module>SimpleKafka</module>
+        <module>KafkaOpensearch</module>
     </modules>
 
     <dependencyManagement>
