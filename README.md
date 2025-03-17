@@ -8,6 +8,11 @@ A personal laboratory for learning and experimenting with Java development. This
 
 ### Spring
 
+**Spring/Kafka** - Using Kafka in spring projects
+
+- **Spring/SpringKafka/SimpleKafka** - Simple kafka producer and consumer
+- [**Spring/SpringKafka/KafkaOpensearch**](Spring/SpringKafka/KafkaOpensearch/README.md) - Sending data from Spring Boot application via Kafka to Opensearch
+
 **Spring/Async** - Projects with multi threading
 
 - **Spring/Async/SimpleAsync** - Spring run async jobs via thread pool (+ example of inject prototype bean into singleton)

@@ -3,7 +3,7 @@
   "config": {
     "connector.class": "io.aiven.kafka.connect.opensearch.OpensearchSinkConnector",
     "tasks.max": "1",
-    "topics": "metrics_topic_opensearch_v1",
+    "topics": "metrics_topic_opensearch_v2",
     "connection.url": "http://opensearch-node1:9200",
     "schema.ignore": "true",
     "behavior.on.null.values": "ignore",
