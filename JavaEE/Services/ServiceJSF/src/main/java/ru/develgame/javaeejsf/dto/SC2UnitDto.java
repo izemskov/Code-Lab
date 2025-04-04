@@ -1,20 +1,20 @@
-package ru.develgame.codelab.service.restapi.dto;
-
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
+package ru.develgame.javaeejsf.dto;
 
 public class SC2UnitDto {
     private int id;
-
-    @NotNull(message = "Name cannot be null")
-    @NotEmpty(message = "Name cannot be empty")
     private String name;
-    @NotNull(message = "Attack cannot be null")
-    @Positive
     private Double attack;
-    @NotNull(message = "Defense cannot be null")
     private Double defense;
+
+    public SC2UnitDto() {
+    }
+
+    public SC2UnitDto(int id, String name, Double attack, Double defense) {
+        this.id = id;
+        this.name = name;
+        this.attack = attack;
+        this.defense = defense;
+    }
 
     public int getId() {
         return id;

@@ -2,8 +2,7 @@ package ru.develgame.javaeejsf.datamodels;
 
 import org.primefaces.model.FilterMeta;
 import org.primefaces.model.LazyDataModel;
-import org.primefaces.model.SortMeta;
-import ru.develgame.javaeecommon.entity.SC2Unit;
+import ru.develgame.javaeejsf.dto.SC2UnitDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +11,10 @@ import java.util.Map;
 /**
  * @author Ilya Zemskov
  */
-public abstract class LazySC2UnitDataModel extends LazyDataModel<SC2Unit> {
-    protected List<SC2Unit> data = new ArrayList<>();
+public abstract class LazySC2UnitDataModel extends LazyDataModel<SC2UnitDto> {
+    protected List<SC2UnitDto> data = new ArrayList<>();
 
-    public LazySC2UnitDataModel(List<SC2Unit> data) {
+    public LazySC2UnitDataModel(List<SC2UnitDto> data) {
         this.data.addAll(data);
     }
 
@@ -25,8 +24,8 @@ public abstract class LazySC2UnitDataModel extends LazyDataModel<SC2Unit> {
     }
 
     @Override
-    public SC2Unit getRowData(String rowKey) {
-        for (SC2Unit sc2Unit : data) {
+    public SC2UnitDto getRowData(String rowKey) {
+        for (SC2UnitDto sc2Unit : data) {
             if (sc2Unit.getId() == Integer.parseInt(rowKey)) {
                 return sc2Unit;
             }
@@ -36,7 +35,7 @@ public abstract class LazySC2UnitDataModel extends LazyDataModel<SC2Unit> {
     }
 
     @Override
-    public String getRowKey(SC2Unit sc2Unit) {
+    public String getRowKey(SC2UnitDto sc2Unit) {
         return String.valueOf(sc2Unit.getId());
     }
 }

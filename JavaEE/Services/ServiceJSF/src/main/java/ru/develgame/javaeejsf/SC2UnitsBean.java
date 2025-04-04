@@ -4,20 +4,17 @@ import org.primefaces.model.FilterMeta;
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortMeta;
 import org.primefaces.model.file.UploadedFile;
-import ru.develgame.javaeecommon.entity.SC2Unit;
 import ru.develgame.javaeejsf.datamodels.LazySC2UnitDataModel;
+import ru.develgame.javaeejsf.dto.SC2UnitDto;
 import ru.develgame.javaeejsf.service.SC2UnitService;
-import ru.develgame.javaeesoap.client.SC2WebService;
-import ru.develgame.javaeesoap.client.SC2WebServiceService;
-import ru.develgame.javaeesoap.client.Sc2Unit;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.ws.rs.core.Response;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.ws.rs.core.Response;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +30,7 @@ public class SC2UnitsBean implements Serializable {
     @Inject
     private SC2UnitService sc2UnitService;
 
-    private LazyDataModel<SC2Unit> lazyModel;
+    private LazyDataModel<SC2UnitDto> lazyModel;
 
     private UploadedFile file;
 
@@ -41,7 +38,7 @@ public class SC2UnitsBean implements Serializable {
     public void init() {
         lazyModel = new LazySC2UnitDataModel(sc2UnitService.getSc2UnitList()) {
             @Override
-            public List<SC2Unit> load(int i, int i1, Map<String, SortMeta> map, Map<String, FilterMeta> map1) {
+            public List<SC2UnitDto> load(int i, int i1, Map<String, SortMeta> map, Map<String, FilterMeta> map1) {
                 data.clear();
                 data.addAll(sc2UnitService.getSc2UnitList());
                 return data;
@@ -49,7 +46,7 @@ public class SC2UnitsBean implements Serializable {
         };
     }
 
-    private List<SC2Unit> selectedSC2Unit = new ArrayList<>();
+    private List<SC2UnitDto> selectedSC2Unit = new ArrayList<>();
 
     private String name;
     private String attack;
@@ -70,7 +67,7 @@ public class SC2UnitsBean implements Serializable {
             file.getContent();
         }
 
-        Response res = sc2UnitService.createSc2Unit(new SC2Unit(1L, name, attackD, defenseD));
+        Response res = sc2UnitService.createSc2Unit(new SC2UnitDto(1, name, attackD, defenseD));
         if (res.getStatus() == Response.Status.CREATED.getStatusCode()) {
             FacesContext.getCurrentInstance().addMessage("msgs",
                     new FacesMessage(name + " created successfully"));
@@ -92,8 +89,8 @@ public class SC2UnitsBean implements Serializable {
             return;
         }
 
-        List<Sc2Unit> soapSC2Units = selectedSC2Unit.stream().limit(2).map(t -> {
-            Sc2Unit sc2Unit = new Sc2Unit();
+        List<SC2UnitDto> soapSC2Units = selectedSC2Unit.stream().limit(2).map(t -> {
+            SC2UnitDto sc2Unit = new SC2UnitDto();
             sc2Unit.setAttack(t.getAttack());
             sc2Unit.setDefense(t.getDefense());
             sc2Unit.setId(t.getId());
@@ -101,32 +98,33 @@ public class SC2UnitsBean implements Serializable {
             return sc2Unit;
         }).collect(Collectors.toList());
 
-        SC2WebServiceService sc2WebServiceService = new SC2WebServiceService();
-        SC2WebService sc2WebServiceProxy = sc2WebServiceService.getSC2WebServicePort();
-        int res = sc2WebServiceProxy.fight(soapSC2Units.get(0), soapSC2Units.get(1));
-        if (res > 0) {
-            FacesContext.getCurrentInstance().addMessage(null,
-                    new FacesMessage(soapSC2Units.get(0).getName() + " win"));
-        }
-        else if (res < 0) {
-            FacesContext.getCurrentInstance().addMessage(null,
-                    new FacesMessage(soapSC2Units.get(1).getName() + " win"));
-        }
-        else {
-            FacesContext.getCurrentInstance().addMessage(null,
-                    new FacesMessage("Units equals"));
-        }
+        // TODO - SOAP
+//        SC2WebServiceService sc2WebServiceService = new SC2WebServiceService();
+//        SC2WebService sc2WebServiceProxy = sc2WebServiceService.getSC2WebServicePort();
+//        int res = sc2WebServiceProxy.fight(soapSC2Units.get(0), soapSC2Units.get(1));
+//        if (res > 0) {
+//            FacesContext.getCurrentInstance().addMessage(null,
+//                    new FacesMessage(soapSC2Units.get(0).getName() + " win"));
+//        }
+//        else if (res < 0) {
+//            FacesContext.getCurrentInstance().addMessage(null,
+//                    new FacesMessage(soapSC2Units.get(1).getName() + " win"));
+//        }
+//        else {
+//            FacesContext.getCurrentInstance().addMessage(null,
+//                    new FacesMessage("Units equals"));
+//        }
     }
 
-    public LazyDataModel<SC2Unit> getLazyModel() {
+    public LazyDataModel<SC2UnitDto> getLazyModel() {
         return lazyModel;
     }
 
-    public List<SC2Unit> getSelectedSC2Unit() {
+    public List<SC2UnitDto> getSelectedSC2Unit() {
         return selectedSC2Unit;
     }
 
-    public void setSelectedSC2Unit(List<SC2Unit> selectedSC2Unit) {
+    public void setSelectedSC2Unit(List<SC2UnitDto> selectedSC2Unit) {
         this.selectedSC2Unit = selectedSC2Unit;
     }
 

@@ -37,13 +37,6 @@ public class SC2UnitController {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Response createSC2Unit(@Valid SC2UnitDto sc2UnitDto) {
-//        if (sc2UnitDto.getName() == null || sc2UnitDto.getName().isBlank()) {
-//            return Response.status(Response.Status.BAD_REQUEST)
-//                    .entity(new ErrorResponses("Name cannot be empty"))
-//                    .type(MediaType.APPLICATION_JSON)
-//                    .build();
-//        }
-
         SC2Unit sc2Unit = sc2UnitsDao.createSC2Unit(sc2UnitDto);
 
         return Response.status(Response.Status.CREATED)

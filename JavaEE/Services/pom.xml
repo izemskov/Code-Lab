@@ -16,5 +16,6 @@
 
     <modules>
         <module>ServiceRestApi</module>
+        <module>ServiceJSF</module>
     </modules>
 </project>
