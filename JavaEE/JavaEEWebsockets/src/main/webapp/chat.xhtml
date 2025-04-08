@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+   <title>Web sockets chat</title>
+</h:head>
+<h:body style="margin: 0;">
+   <div style="padding: 15px;">
+      <h:form>
+         <p:remoteCommand name="messageShowed" update="@form:chatMessagesBlock"/>
+         <f:websocket channel="chatRoomChannel" onmessage="function(m){messageShowed();}"/>
+
+         <h:panelGroup layout="block" style="margin-bottom: 20px;">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+               <tbody>
+               <tr>
+                  <td>
+                     <p:inputText id="textMessage" value="#{chatRoom.chatMessage}" style="width: 100%; font-size: 14px;"/>
+                  </td>
+                  <td style="padding-left: 5px;" width="20">
+                     <p:commandButton actionListener="#{chatRoom.addMessage()}" icon="pi pi-send" update="@form"/>
+                  </td>
+               </tr>
+               </tbody>
+            </table>
+         </h:panelGroup>
+
+         <h:panelGroup layout="block" id="chatMessagesBlock">
+            <p:dataTable id="chatMessageTable"
+                         var="chatMessage"
+                         widgetVar="chatMessageTable"
+                         value="#{chatRoom.chatLazyModel}"
+                         scrollRows="#{chatRoom.chatPageLimit}"
+                         liveScroll="true"
+                         scrollHeight="800"
+                         lazy="true"
+                         style="border: 1px solid grey;"
+                         scrollable="true">
+
+               <p:column headerText="Messages">
+                  <p:fieldset width="220" rendered="#{not chatRoom.isOwnMessage(chatMessage.name)}" legend="#{chatMessage.name} #{chatMessage.createdAt}" style="margin-bottom: 10px; font-size: 14px;">
+                     <p class="m-0" style=" font-size: 14px;">
+                        #{chatMessage.message}
+                     </p>
+                  </p:fieldset>
+               </p:column>
+
+               <p:column headerText="Your Messages">
+                  <p:fieldset width="220" rendered="#{chatRoom.isOwnMessage(chatMessage.name)}" legend="#{chatMessage.name} #{chatMessage.createdAt}" style="margin-bottom: 10px; font-size: 14px;">
+                     <p class="m-0" style=" font-size: 14px;">
+                        #{chatMessage.message}
+                     </p>
+                  </p:fieldset>
+               </p:column>
+            </p:dataTable>
+         </h:panelGroup>
+      </h:form>
+   </div>
+</h:body>
+</html>

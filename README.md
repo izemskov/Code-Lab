@@ -52,6 +52,8 @@ A personal laboratory for learning and experimenting with Java development. This
 - [**JavaEE/Services/ServiceRestApi**](JavaEE/Services/ServiceRestApi/README.md) - JavaEE Rest-API service
 - JavaEE/Services/ServiceJSF - Frontend for JavaEE Rest-API service
 
+**JavaEE/JavaEEWebsockets** - JavaEE web sockets example (Chat application)
+
 ### Java
 
 **Java/StringCollation** - Rule based string collation
